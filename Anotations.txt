@@ -1,0 +1,9 @@
+@GET("post")
+Call<List<Comment>> getComments(
+	@Query("postId") int postId,
+	@Query("_sort") String sorting,
+	@Query("_order") String order
+);
+
+@GET("post/{id}/comments")
+Call<List<Comment>> getComments(@Path("id") int postId);
